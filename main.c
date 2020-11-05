@@ -2,15 +2,26 @@
 #include <stdlib.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-void swap (int *x, int *y) {
-	int temp;
-	temp = *x;
-	*x = *y;
-	*y = temp;
+
+int main(void)
+{
+	int i;
+	int grade[5];
+	int sum;
+	
+	int *ptr;
+	ptr = grade;
+	
+	for (i=0;i<5;i++)
+{
+	printf("input value [%i] = ", i);
+	scanf("%d", &grade[i]);
+	sum	+= *(ptr+i);	// *(ptr+i) 표현을 활용하여 각 배열의 값에 접근 
 }
-void main(void) {
-	int a = 3;
-	int b = 5;
-	swap(&a, &b);	//	swap은 포인터 함수이기 때문에 &붙이기 
-	printf("a:%i, b:%i\n", a, b);
+
+	for (i=0;i<5;i++)
+	printf("grade[%d] = %d\n", i, grade[i]);
+	printf("\n");
+	printf("average = %d\n", sum/5);
+	return 0;
 }
