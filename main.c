@@ -2,27 +2,15 @@
 #include <stdlib.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
-int main(void)
-{
-	int i = 10;
-	char c = 'a';
-	
-	int *iptr;		// 정수형 포인터 변수 iptr 선언;
-	iptr = &i;		// iptr이 i를 가리키게 함;
-	//	int *iptr = &i;
-	
-	char *cptr;		// 문자형 포인터 변수 cptr 선언;
-	cptr = &c;		// cptr이 c를 가리키게 함;
-	//	char *cptr = &c;
-	
-	int *iptr2;		// 정수형 포인터 변수 iptr2 선언;
-	iptr2 = iptr;	// iptr2가 iptr이 가리키는 곳을 동일하게 가리키게 함;
-	//	int *iptr2 = iptr;
-	
-	printf("i : %p\n%p (size:%i)\n", iptr, &i, sizeof(iptr));
-	printf("c : %p\n%p (size:%i)\n", cptr, &c, sizeof(cptr));
-	printf("iptr2 : %p, %i\n", iptr2, *iptr2);
-	
-	return 0;
+void swap (int *x, int *y) {
+	int temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
+}
+void main(void) {
+	int a = 3;
+	int b = 5;
+	swap(&a, &b);	//	swap은 포인터 함수이기 때문에 &붙이기 
+	printf("a:%i, b:%i\n", a, b);
 }
